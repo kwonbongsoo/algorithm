@@ -1,12 +1,10 @@
 function solution(A, K) {
   var tmp = []
-
     for(var i=0; i < A.length; i++) {
-     if(i+K >= A.length) {
+     if(i+K >= A.length)
        tmp[(i+K)%(A.length)] = A[i]
-     }else {
+     else
        tmp[i+K] =A[i]
-     }
     }
     return tmp
 }
