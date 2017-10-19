@@ -1,15 +1,13 @@
 function solution(A, K) {
-  var tmp = 0
+  var tmp = []
+
     for(var i=0; i < A.length; i++) {
      if(i+K >= A.length) {
-       console.log(i)
-         console.log(((i+K)%(A.length)))
+       tmp[(i+K)%(A.length)] = A[i]
      }else {
-       A[i+K] =tmp
-       A[i+K] =A[i]
-       A[i] = tmp
+       tmp[i+K] =A[i]
      }
     }
-    console.log(A)
+    return tmp
 }
 solution([0,1,2,3], 3)
