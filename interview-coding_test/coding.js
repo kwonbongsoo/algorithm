@@ -36,8 +36,10 @@ for(var i=0; i < arr.length; i++) {
 }
 // 포문 i를 돌면서 1이 연속했을 때만 그 인덱스값을 새로운 배열 tmp에 저장
 
-for(var i=0; i < tmp.length; i++) {
+if(length > 0) {
+ for(var i=0; i < tmp.length; i++) {
     find( tmp[i][0],tmp[i][1]);
+ }           
 }
 // tmp에 있는 1이 연속한 인덱스 값을 바탕으로 정말로 정사각형이 되는지 조건을 확인
 // find라는 함수를 이용해서 찾음
@@ -45,7 +47,6 @@ for(var i=0; i < tmp.length; i++) {
   console.log("정사각형의 넓이는 "+big*=big)
 
 function find(i, j) {
-  length = 1;
   var num;
     for(num = 1; j+num < arr[0].length && i+num < arr.length; num++) {
         if(arr[i+num][j+num] == 1) {
