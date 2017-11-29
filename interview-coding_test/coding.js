@@ -12,11 +12,13 @@ var max = 0;
 var before = 0;
 var tmp = [];
 var big = 0;
+var length = 0;
 for(var i=0; i < arr.length; i++) {
   before = 0;
   max = 0;
   for(var j=0; j < arr[i].length; j++) {
     if(arr[i][j] == 1) {
+      length = 1;
       if(before == 0) {
         max = 1;
       }else {
@@ -43,7 +45,7 @@ for(var i=0; i < tmp.length; i++) {
   console.log("정사각형의 넓이는 "+big*=big)
 
 function find(i, j) {
-  var length = 1;
+  length = 1;
   var num;
     for(num = 1; j+num < arr[0].length && i+num < arr.length; num++) {
         if(arr[i+num][j+num] == 1) {
