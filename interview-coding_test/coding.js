@@ -47,7 +47,7 @@ function find(i, j) {
   var num;
     for(num = 1; j+num < arr[0].length && i+num < arr.length; num++) {
         if(arr[i+num][j+num] == 1) {
-          if(arr[i][j+num] == 1 && arr[i+num][j]) {
+          if(arr[i][j+num] == 1 && arr[i+num][j] == 1) {
             length += 1;
             //정사각형의 조건이 맞았을 때 변수의 길이가 length다.
             // 이 조건에 들어온다면 정사각형의 조건을 만족한다는 의미다.
