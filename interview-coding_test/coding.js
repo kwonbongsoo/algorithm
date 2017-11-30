@@ -13,11 +13,13 @@ var max = 0;
 var before = 0;
 var tmp = [];
 var big = 0;
+var length_tmp = 0;
 for(var i=0; i < arr.length; i++) {
   before = 0;
   max = 0;
   for(var j=0; j < arr[i].length; j++) {
     if(arr[i][j] == 1) {
+      length_tmp = 1;
       if(before == 0) {
         max = 1;
       }else {
@@ -35,9 +37,11 @@ for(var i=0; i < arr.length; i++) {
 }
 
 // 포문 i를 돌면서 1이 연속했을 때만 그 인덱스값을 새로운 배열 tmp에 저장
-for(var i=0; i < tmp.length; i++) {
-    find( tmp[i][0],tmp[i][1]);
-  }
+if(length_tmp > 0) {
+  for(var i=0; i < tmp.length; i++) {
+      find( tmp[i][0],tmp[i][1]);
+    }
+}
 // tmp에 있는 1이 연속한 인덱스 값을 바탕으로 정말로 정사각형이 되는지 조건을 확인
 // find라는 함수를 이용해서 찾음
   // console.log(tmp)
